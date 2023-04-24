@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Mi Store</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <div class="container">
+      <div id="timeline">
+         <div class="progress">
+            <div id="progress-in" style="animation: name forwards 5s;">
+
+               <div id="cir2" style="animation: name1 forwards 8s;"></div>
+               <div id="cir3" style="animation: name2 forwards 8s;"></div>
+
+            </div>
+         </div>
+         <div id="cir1">
+            <div class="innercir1"></div>
+         </div>
+         <div id="circle2">
+            <div class="innercir1"></div>
+         </div>
+         <div id="circle3">
+            <div class="innercir1"></div>
+         </div>
+      </div>
+      <div class="main">
+         <!-- table --1  -->
+         <h2 style="text-align: center;">Mi Products </h2>
+         <div>
+            <table border="1" style="width: 100%; height: 6vh;" onkeyup="calTotal()">
+               <tr>
+                  <th>Product Id</th>
+                  <th>Product Name</th>
+                  <th>Product Price</th>
+                  <th>Product Volume</th>
+                  <th>Product Total</th>
+                  <th>Action</th>
+               </tr>
+               <tr>
+                  <th id="p1Id">1</th>
+                  <th id="p1name">MiUi A6</th>
+                  <th id="p1Price"> 12000/-</th>
+                  <th id="p1Quality"><input type="number" id="volume1"></th>
+                  <th id="p1total"><input type="number" id="productTotal1" readonly></th>
+                  <th id="p1action"><button onclick="cal()">Add / Edit</button></th>
+               </tr>
+               <tr>
+                  <th id="p2Id">2</th>
+                  <th id="p2name">Mi A2</th>
+                  <th id="p2Price">14000/-</th>
+                  <th id="p2Quality"> <input type="number" id="volume2"></th>
+                  <th id="p2total"><input type="number" id="productTotal2" readonly></th>
+                  <th><button onclick="cal()">Add / Edit</button></th>
+               </tr>
+               <tr>
+                  <th id="p3Id">3</th>
+                  <th>Mi Laptop</th>
+                  <th>52000/-</th>
+                  <th><input type="number" id="volume3"></th>
+                  <th><input type="number" id="productTotal3" readonly></th>
+                  <th><button onclick="cal()">Add / Edit</button></th>
+               </tr>
+               <tr>
+                  <th id="p4Id">4</th>
+                  <th>MiType-C Charger </th>
+                  <th>2000/-</th>
+                  <th><input type="number" id="volume4"></th>
+                  <th><input type="number" id="productTotal4" readonly></th>
+                  <th><button onclick="cal()">Add / Edit</button></th>
+               </tr>
+               <tr>
+                  <th id="p5Id">5</th>
+                  <th>Mi Smart Watch</th>
+                  <th>5000/-</th>
+                  <th><input type="number" id="volume5"></th>
+                  <th><input type="number" id="productTotal5" readonly></th>
+                  <th><button onclick="cal()">Add / Edit</button></th>
+               </tr>
+            </table>
+         </div> <br>
+         <div style="text-align: center;">
+            <button id="total" style="width: 100px; height: 6vh;" onclick="cal()">Calcute Price</button> <br> <br>
+         </div>
+         <h2 style="text-align: center;">Added to Your Cart</h2>
+         <!-- table--2  -->
+         <div>
+            <table border="2" style="width: 100%; height: 4vh;">
+               <tr>
+                  <th>Product Name</th>
+                  <th>Product Price </th>
+                  <th>Product Volume</th>
+                  <th>Total Price </th>
+               </tr>
+               <tr>
+                  <th id="c1Name"></th>
+                  <th id="c1Price"></th>
+                  <th id="c1Quality"></th>
+                  <th rowspan="5" id="ctotal"></th>
+               </tr>
+
+               <tr>
+                  <th id="c2Name"></th>
+                  <th id="c2Price"></th>
+                  <th id="c2Quality"></th>
+               </tr>
+
+               <tr>
+                  <th id="c3Name"></th>
+                  <th id="c3Price"></th>
+                  <th id="c3Quality"></th>
+               </tr>
+
+               <tr>
+                  <th id="c4Name"></th>
+                  <th id="c4Price"></th>
+                  <th id="c4Quality"></th>
+               </tr>
+
+               <tr>
+                  <th id="c5Name"></th>
+                  <th id="c5Price"></th>
+                  <th id="c5Quality"></th>
+               </tr>
+            </table>
+         </div>
+         <br>
+         <!--  -->
+         <div style="text-align: center;">
+            <button id="total" style="width: 100px; height: 6vh;" onclick="discount()">Buy</button> <br> <br>
+            <span id="title"></span>
+            <strike id="textres" style="color: black;"></strike>
+            <span id="save"></span> <br>
+            <span id="text"></span>
+         </div>
+         <!-- table -3  -->
+         <div>
+            <div>
+               <h2 style="text-align: center;">Payment Method</h2> <br>
+               <button style="width: 30%;" onclick="gpay()">Google Pay</button> <button  style="width: 33%;" onclick="ppay()">PhonePay</button>
+               <button  style="width: 35%;" onclick="ptm()">Paytm</button> <br> <br> <button  style="width: 100%;" onclick="cash()">Cash on Delivery</button>
+            </div> <br>
+            <table border="1" id="table">
+               <tr>
+                  <th>Label</th>
+                  <th>Deatils</th>
+               </tr>
+               <tr>
+                  <th>Payer</th>
+                  <th id="payer"></th>
+               </tr>
+
+               <tr>
+                  <th>Number</th>
+                  <th id="number"></th>
+               </tr>
+
+               <tr>
+                  <th>UPI</th>
+                  <th id="upi"></th>
+               </tr>
+            </table> <br>
+            <div>
+               Upload Screenshot of Payment: <br> <br> <input type="file" id="file" style="width: 100%; color: black;" required> <br> <br>
+               <button onclick="submit()" type="submit">Submit</button> <br> <br>
+               <span id="proof" style="text-align: center;"></span>
+            </div>
+         </div>
+      </div>
+   </div>
+   <script src="app.js"></script>
+</body>
+
+</html>
